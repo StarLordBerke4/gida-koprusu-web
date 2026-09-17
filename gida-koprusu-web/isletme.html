@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İşletme Olarak Katıl - Gıda Köprüsü</title>
+  
+  <!-- Google Fonts: Urbanist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#DDA63A',
+          },
+          fontFamily: {
+            sans: ['Urbanist', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-white antialiased font-sans selection:bg-brand selection:text-gray-900 min-h-screen flex flex-col">
+  
+  <!-- Navbar -->
+  <nav class="container mx-auto px-6 py-5 flex justify-between items-center bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+    <a href="index.html" class="text-2xl font-bold tracking-wide">
+      Gıda<span class="text-brand">Köprüsü</span>
+    </a>
+    
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-8 items-center">
+      <a href="index.html" class="text-gray-300 hover:text-brand font-medium transition">Ana Sayfa</a>
+    </div>
+  </nav>
+
+  <!-- Main Form Section -->
+  <main class="flex-grow container mx-auto px-6 py-12 md:py-20 max-w-3xl">
+    <div class="text-center mb-12">
+      <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="fa-solid fa-briefcase text-3xl text-brand"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Sıfır Atık Hareketi'ne Katılın</h1>
+      <p class="text-gray-400 text-lg">İşletmenizin israfını önleyin, vergi avantajlarından yararlanın ve sürdürülebilirliğe katkı sağlayın.</p>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-xl">
+      <form class="space-y-6">
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-gray-300">İşletme Adı</label>
+          <input type="text" placeholder="Şirket, restoran veya marketinizin adı" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="text-sm font-medium text-gray-300">Yetkili Adı Soyadı</label>
+            <input type="text" placeholder="Ad Soyad" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition">
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-medium text-gray-300">Telefon Numarası</label>
+            <input type="tel" placeholder="0 (5XX) XXX XX XX" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition">
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-gray-300">İşletme Türü</label>
+          <select class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition appearance-none">
+            <option value="">Seçiniz</option>
+            <option value="restoran">Restoran / Kafe</option>
+            <option value="market">Market / Bakkal</option>
+            <option value="firin">Fırın / Pastane</option>
+            <option value="uretici">Çiftçi / Üretici</option>
+            <option value="diger">Diğer</option>
+          </select>
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-gray-300">Vergi Numarası <span class="text-gray-500 text-xs font-normal">(İndirimlerden faydalanmak için)</span></label>
+          <input type="text" placeholder="10 Haneli Vergi No" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition">
+        </div>
+        
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-gray-300">Açık Adresiniz</label>
+          <textarea rows="3" placeholder="İşletmenizin açık adresi..." class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition"></textarea>
+        </div>
+
+        <button type="button" class="w-full bg-brand text-gray-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 transition shadow-lg shadow-brand/20 mt-8">
+          Kurumsal Başvuru Yap
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 py-8 border-t border-gray-800 mt-auto">
+    <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-600 text-sm font-medium">© 2026 Gıda Köprüsü. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

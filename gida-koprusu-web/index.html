@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gıda Köprüsü - İsrafı Önle, Hayata Bağla.</title>
+  <meta name="description" content="Açlığa ve gıda israfına son vermeyi hedefleyen, SKA 2 destekli sürdürülebilir sosyal girişim platformu.">
+  
+  <!-- Google Fonts: Urbanist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#DDA63A',
+          },
+          fontFamily: {
+            sans: ['Urbanist', 'sans-serif'],
+          },
+          animation: {
+            'marquee': 'marquee 30s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white antialiased font-sans selection:bg-brand selection:text-gray-900">
+  
+  <!-- Navbar -->
+  <nav class="container mx-auto px-6 py-5 flex justify-between items-center sticky top-0 bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+    <div class="text-2xl font-bold tracking-wide">
+      Gıda<span class="text-brand">Köprüsü</span>
+    </div>
+    
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button class="text-white hover:text-brand focus:outline-none">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-8 items-center">
+      <a href="#misyon" class="text-gray-300 hover:text-brand font-medium transition">Misyonumuz</a>
+      <a href="#nasil-calisir" class="text-gray-300 hover:text-brand font-medium transition">Nasıl Çalışır?</a>
+      <a href="#iletisim" class="text-gray-300 hover:text-brand font-medium transition">İletişim</a>
+      <a href="https://yet-gen.vercel.app/" class="inline-flex justify-center items-center bg-brand text-gray-900 px-6 py-2.5 rounded-full font-bold hover:bg-yellow-500 transition shadow-lg shadow-brand/20">
+        Uygulamayı İndir
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="container mx-auto px-6 py-16 md:py-24 flex flex-col-reverse md:flex-row items-center gap-12">
+    <div class="w-full md:w-1/2 flex flex-col items-start space-y-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-white">
+        Gıda Köprüsü
+      </h1>
+      <h2 class="text-2xl md:text-3xl text-gray-300 font-medium">
+        İsrafı Önle, <span class="text-brand font-bold">Hayata Bağla.</span>
+      </h2>
+      <p class="text-lg text-gray-400 max-w-lg leading-relaxed font-light">
+        Taze gıdaların çöpe gitmesini engelliyor, ihtiyaç sahipleriyle ve sürdürülebilir işletmelerle buluşturuyoruz. Adil bir gıda sistemi için sen de köprü ol.
+      </p>
+      <div class="flex flex-col sm:flex-row w-full sm:w-auto gap-4 pt-4">
+        <a href="ihtiyac-sahibi.html" class="inline-flex justify-center items-center border-2 border-brand text-brand px-8 py-3.5 rounded-full font-bold text-lg hover:bg-brand/10 transition text-center">
+          İhtiyaç Sahibi Olarak Katıl
+        </a>
+        <a href="isletme.html" class="inline-flex justify-center items-center bg-brand text-gray-900 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-lg shadow-brand/20 text-center">
+          İşletme Olarak Katıl
+        </a>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2">
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-brand/10 border border-gray-800">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop" alt="Taze Meyve Sebze Kurtarma" class="w-full h-[400px] md:h-[500px] object-cover hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Problem Section: Sayılarla Acı Gerçekler -->
+  <section id="misyon" class="container mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+      <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Sayılarla Acı Gerçekler</h3>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">Mevcut gıda sistemi büyük bir krizin içinde. Ancak bu tabloyu değiştirmek bizim elimizde.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Box 1 -->
+      <div class="bg-gray-800 p-10 rounded-2xl border border-brand/40 hover:border-brand transition duration-300 flex flex-col items-center text-center shadow-lg">
+        <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-6">
+          <i class="fa-solid fa-trash-can text-3xl text-brand"></i>
+        </div>
+        <h4 class="text-5xl font-black text-white mb-3">23 Milyon</h4>
+        <p class="text-brand font-bold text-sm uppercase tracking-widest mb-2">Ton Yıllık İsraf</p>
+        <p class="text-gray-400 text-sm">Sadece bir yılda çöpe giden yenilebilir gıda miktarı, dünyadaki açlık sınırını aşmaya yetiyor.</p>
+      </div>
+      
+      <!-- Box 2 -->
+      <div class="bg-gray-800 p-10 rounded-2xl border border-brand/40 hover:border-brand transition duration-300 flex flex-col items-center text-center shadow-lg">
+        <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-6">
+          <i class="fa-solid fa-apple-whole text-3xl text-brand"></i>
+        </div>
+        <h4 class="text-5xl font-black text-white mb-3">%39.7</h4>
+        <p class="text-brand font-bold text-sm uppercase tracking-widest mb-2">Taze Gıda Çöpte</p>
+        <p class="text-gray-400 text-sm">Üretilen meyve ve sebzelerin yarısına yakını henüz sofraya ulaşmadan israf ediliyor.</p>
+      </div>
+      
+      <!-- Box 3 -->
+      <div class="bg-gray-800 p-10 rounded-2xl border border-brand/40 hover:border-brand transition duration-300 flex flex-col items-center text-center shadow-lg">
+        <div class="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mb-6">
+          <i class="fa-solid fa-users-slash text-3xl text-brand"></i>
+        </div>
+        <h4 class="text-5xl font-black text-white mb-3">1.4 Milyon</h4>
+        <p class="text-brand font-bold text-sm uppercase tracking-widest mb-2">İnsanın Gıda Güvencesi Yok</p>
+        <p class="text-gray-400 text-sm">İsraf edilen gıdanın sadece küçük bir bölümüyle milyonlarca insanın açlık sorunu çözülebilir.</p>
+      </div>
+    </div>
+
+    <!-- Mission & Vision Section -->
+    <div class="mt-24">
+      <div class="text-center mb-12">
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Misyonumuz ve Vizyonumuz</h3>
+        <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Misyon -->
+        <div class="bg-gray-800 p-10 rounded-2xl border border-gray-700 hover:border-brand/40 transition duration-300 flex flex-col shadow-lg">
+          <div class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-bullseye text-2xl text-brand"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-white mb-4">Misyonumuz</h4>
+          <p class="text-gray-400 leading-relaxed">
+            Gıda israfını yenilikçi teknoloji ve toplumsal dayanışma ile engelleyerek, kurtarılan taze gıdaları ihtiyaç sahiplerine en hızlı ve adil şekilde ulaştırmak. İşletmelerin gıda fazlasını toplumsal bir değere dönüştürerek sürdürülebilir bir ekosistem kurmak.
+          </p>
+        </div>
+        
+        <!-- Vizyon -->
+        <div class="bg-gray-800 p-10 rounded-2xl border border-gray-700 hover:border-brand/40 transition duration-300 flex flex-col shadow-lg">
+          <div class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-lightbulb text-2xl text-brand"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-white mb-4">Vizyonumuz</h4>
+          <p class="text-gray-400 leading-relaxed">
+            Hiçbir gıdanın çöpe gitmediği, kaynakların doğaya ve insana saygılı biçimde korunduğu, "Sıfır Açlık" (SKA 2) hedefine ulaşılan, dayanışma odaklı örnek bir gıda ağı yaratmak.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution & Features Section -->
+  <section id="nasil-calisir" class="bg-gray-800 py-24 border-y border-gray-700">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Nasıl Çözüyoruz?</h3>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">Uygulamamız aracılığıyla gıda israfını engelliyor, kaynakları en verimli şekilde adil dağıtıyoruz.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-brand/50 hover:-translate-y-2 transition duration-300">
+          <div class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-store text-2xl text-brand"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">1. İşletme Fazlası</h4>
+          <p class="text-gray-400 leading-relaxed text-sm">
+            İşletmeler, gün sonunda satılamayan ancak tüketime tamamen uygun taze gıdaları (unlu mamuller, sebze/meyve vb.) sistem üzerinden kurtarılmayı bekleyen ürünler listesine ekler.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-brand/50 hover:-translate-y-2 transition duration-300">
+          <div class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-person-biking text-2xl text-brand"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">2. Gönüllü Kuryeler</h4>
+          <p class="text-gray-400 leading-relaxed text-sm">
+            Gönüllü kuryeler, kendilerine en yakın işletmelerdeki bekleyen ürünleri görerek "Üstlen" butonu ile teslim alma görevini alır ve ürünleri işletmeden teslim alır.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-brand/50 hover:-translate-y-2 transition duration-300">
+          <div class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-map-location-dot text-2xl text-brand"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">3. Canlı Rota Takibi</h4>
+          <p class="text-gray-400 leading-relaxed text-sm">
+            Kuryeler ürünleri teslim aldıktan sonra, uygulama üzerinden optimize edilmiş canlı harita rotası oluşturulur ve ürünlerin ihtiyaç sahiplerine ulaştırılma süreci takip edilir.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-brand/50 hover:-translate-y-2 transition duration-300">
+          <div class="w-14 h-14 bg-brand/10 rounded-xl flex items-center justify-center mb-6">
+            <i class="fa-solid fa-hand-holding-heart text-2xl text-brand"></i>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">4. İhtiyaç Sahibine Teslimat</h4>
+          <p class="text-gray-400 leading-relaxed text-sm">
+            Kurtarılan taze gıdalar, sistemdeki kayıtlı ihtiyaç sahiplerine hızla ve güvenle ulaştırılır. Hem gıda israfı önlenir hem de dayanışma ağı büyümüş olur.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Bonus Feature (Gel Al) -->
+      <div class="mt-8 bg-gradient-to-r from-brand/20 to-gray-900 border border-brand/30 rounded-2xl p-8 relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+        <div class="absolute -right-10 -top-10 text-brand/10 text-9xl">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <div class="w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center shrink-0 z-10 border border-brand/50 shadow-[0_0_15px_rgba(250,187,24,0.3)]">
+           <i class="fa-solid fa-shoe-prints text-3xl text-brand"></i>
+        </div>
+        <div class="z-10 flex-grow">
+          <div class="flex items-center gap-3 mb-2">
+            <h4 class="text-2xl font-bold text-white">Bonus: Gel Al & Yürüyerek Kazan</h4>
+            <span class="bg-brand text-gray-900 text-xs font-bold px-2 py-1 rounded">YENİ</span>
+          </div>
+          <p class="text-gray-300 leading-relaxed text-sm">
+            İhtiyaç sahibi kullanıcılarımız veya gönüllülerimiz; "Gel Al" özelliği ile işletmeye yürüyerek gidip ürününü (veya bağışçının gönderdiği bağış kutusunu) teslim alırsa <span class="text-brand font-semibold">ekstra indirim kuponları</span> kazanır. Bu kuponlar sayesinde indirimdeki fırsat ürünleri <span class="text-white font-bold">neredeyse bedavaya</span> alınabilir! Hem sağlığınıza hem cebinize hem de doğaya katkı sağlayın.
+          </p>
+        </div>
+      </div>
+
+      <!-- Advantages Section -->
+      <div class="mt-24">
+        <div class="text-center mb-12">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Sistemin Sağladığı Avantajlar</h3>
+          <p class="text-gray-400 max-w-2xl mx-auto">Gıda Köprüsü, tüm paydaşlar için sürdürülebilir ve kazançlı bir ekosistem yaratır.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Advantage 1: İşletmeler -->
+          <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700 flex flex-col items-center text-center">
+            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mb-4 text-brand">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-2">İşletmeler İçin</h4>
+            <ul class="text-sm text-gray-400 space-y-2 text-left w-full">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Atık maliyetlerinde azalma</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Kurumsal sosyal sorumluluk (CSR) katkısı</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Yeni ve sadık müşteri kazanımı</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Sürdürülebilirlik sertifikası puanı</span></li>
+            </ul>
+          </div>
+
+          <!-- Advantage 2: Gönüllüler & Kullanıcılar -->
+          <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700 flex flex-col items-center text-center">
+            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mb-4 text-brand">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-2">Kullanıcılar İçin</h4>
+            <ul class="text-sm text-gray-400 space-y-2 text-left w-full">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Taze gıdaya uygun fiyatla erişim</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Gönüllü kuryelik ile rozet ve puan kazanımı</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Toplumsal dayanışmanın parçası olma</span></li>
+            </ul>
+          </div>
+
+          <!-- Advantage 3: Çevre & Toplum -->
+          <div class="bg-gray-800/50 p-6 rounded-2xl border border-gray-700 flex flex-col items-center text-center">
+            <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mb-4 text-brand">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-2">Çevre ve Toplum İçin</h4>
+            <ul class="text-sm text-gray-400 space-y-2 text-left w-full">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Sıfır atık hedefine doğrudan destek</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Gıda güvensizliği yaşayan ailelere yardım</span></li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand mt-1"></i><span>Döngüsel ekonomiye geçişin hızlanması</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile App Showcase Section -->
+  <section class="bg-gray-900 py-24 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand/5 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Mobil Uygulamamız</h3>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">Gıda Köprüsü uygulamasını indirin, israfı önlemeye ve hayata bağlamaya hemen başlayın.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <!-- App Screen 1 (Home) -->
+        <div class="rounded-[2.5rem] overflow-hidden border-[6px] border-gray-800 shadow-2xl hover:border-brand/60 hover:shadow-brand/20 transition-all duration-500 transform hover:-translate-y-2 bg-[#0B1120] flex flex-col h-[520px] relative">
+          <!-- Notch -->
+          <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+             <div class="w-24 h-5 bg-gray-800 rounded-b-2xl"></div>
+          </div>
+          <!-- Screen Content -->
+          <div class="flex-grow flex flex-col p-4 pt-10 pb-16 relative overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <!-- Header -->
+            <div class="flex justify-between items-start mb-6">
+              <div>
+                <div class="text-xl font-bold tracking-tight text-white">Gıda<span class="text-brand">Köprüsü</span></div>
+                <div class="text-[6px] text-gray-400 tracking-widest mt-0.5 uppercase">İsrafı Önle, Hayata Bağla.</div>
+              </div>
+              <div class="flex flex-col items-end gap-3">
+                <div class="flex items-center gap-4 text-white">
+                   <div class="relative"><i class="fa-solid fa-cart-shopping"></i><div class="absolute -top-1 -right-1 w-2 h-2 bg-brand rounded-full border border-[#0B1120]"></div></div>
+                   <div class="relative"><i class="fa-regular fa-bell"></i><div class="absolute -top-1 -right-1 w-2 h-2 bg-brand rounded-full border border-[#0B1120]"></div></div>
+                </div>
+                <i class="fa-solid fa-qrcode text-white text-lg"></i>
+              </div>
+            </div>
+            
+            <h4 class="text-lg font-bold text-white mb-4">Hoş geldin, Berke 👋</h4>
+            
+            <!-- Stats -->
+            <div class="bg-transparent border border-brand/50 rounded-2xl p-4 flex flex-col gap-3 mb-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center text-brand text-sm shrink-0"><i class="fa-solid fa-box"></i></div>
+                <div>
+                  <div class="text-[10px] text-gray-400">Bugüne kadar kurtarılan gıda</div>
+                  <div class="font-bold text-sm text-white">125 kg</div>
+                </div>
+              </div>
+              <div class="h-px w-full bg-gray-800"></div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center text-brand text-sm shrink-0"><i class="fa-regular fa-face-smile"></i></div>
+                <div>
+                  <div class="text-[10px] text-gray-400">Memnun İhtiyaç Sahibi</div>
+                  <div class="font-bold text-sm text-white">1,250 Kişi</div>
+                </div>
+              </div>
+              <div class="h-px w-full bg-gray-800"></div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-gray-800 rounded-xl flex items-center justify-center text-brand text-sm shrink-0"><i class="fa-solid fa-store"></i></div>
+                <div>
+                  <div class="text-[10px] text-gray-400">Platforma Üye İşletme</div>
+                  <div class="font-bold text-sm text-white">85 İşletme</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-4 gap-2 mb-6">
+              <div class="bg-gray-800/80 rounded-2xl py-3 flex flex-col items-center justify-center gap-2">
+                <i class="fa-solid fa-tags text-brand"></i>
+                <span class="text-[9px] text-white font-medium">Fırsatlar</span>
+              </div>
+              <div class="bg-gray-800/80 rounded-2xl py-3 flex flex-col items-center justify-center gap-2">
+                <i class="fa-solid fa-piggy-bank text-brand"></i>
+                <span class="text-[9px] text-white font-medium">Kumbara</span>
+              </div>
+              <div class="bg-gray-800/80 rounded-2xl py-3 flex flex-col items-center justify-center gap-2">
+                <i class="fa-solid fa-person-biking text-brand"></i>
+                <span class="text-[9px] text-white font-medium">Kurye Ol</span>
+              </div>
+              <div class="bg-gray-800/80 rounded-2xl py-3 flex flex-col items-center justify-center gap-2">
+                <i class="fa-solid fa-shoe-prints text-brand"></i>
+                <span class="text-[9px] text-white font-medium">Gel Al</span>
+              </div>
+            </div>
+
+            <!-- Items list -->
+            <h5 class="text-sm font-bold text-white mb-3">Kurtarılmayı Bekleyen Ürünler</h5>
+            <div class="flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
+              <div class="bg-gray-800/80 rounded-2xl p-4 min-w-[180px] shrink-0 border border-gray-700/50">
+                <div class="flex justify-between items-start mb-3">
+                  <span class="text-white font-bold text-sm">Bizim Fırın</span>
+                  <span class="bg-red-500/20 text-red-400 text-[9px] px-2 py-1 rounded font-bold">Son 2 saat</span>
+                </div>
+                <div class="text-xs text-gray-400">10 Adet Simit & Poğaça</div>
+              </div>
+              <div class="bg-gray-800/80 rounded-2xl p-4 min-w-[180px] shrink-0 border border-gray-700/50">
+                <div class="flex justify-between items-start mb-3">
+                  <span class="text-white font-bold text-sm">Yeşil Manav</span>
+                </div>
+                <div class="text-xs text-gray-400">Karışık Sebze Kasası</div>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom Nav Bar -->
+          <div class="absolute bottom-0 inset-x-0 h-14 bg-[#111827] flex justify-around items-center px-3 border-t border-gray-800 z-20">
+            <div class="flex flex-col items-center text-brand"><i class="fa-solid fa-house text-base"></i><span class="text-[9px] mt-1 font-medium">Ana Sayfa</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-map text-base"></i><span class="text-[9px] mt-1">Harita</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-solid fa-piggy-bank text-base"></i><span class="text-[9px] mt-1">Kumbaram</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-user text-base"></i><span class="text-[9px] mt-1">Profil</span></div>
+          </div>
+        </div>
+        
+        <!-- App Screen 2 (Fırsatlar) -->
+        <div class="rounded-[2.5rem] overflow-hidden border-[6px] border-gray-800 shadow-2xl hover:border-brand/60 hover:shadow-brand/20 transition-all duration-500 transform hover:-translate-y-2 mt-4 md:mt-8 bg-[#0B1120] flex flex-col h-[520px] relative">
+          <!-- Notch -->
+          <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+             <div class="w-24 h-5 bg-gray-800 rounded-b-2xl"></div>
+          </div>
+          <!-- Screen Content -->
+          <div class="flex-grow flex flex-col p-4 pt-10 pb-20 relative overflow-hidden">
+            <div class="flex items-center gap-3 mb-5">
+              <i class="fa-solid fa-arrow-left text-white text-sm"></i>
+              <h4 class="text-lg font-bold text-white">Fırsatlar</h4>
+            </div>
+            
+            <div class="space-y-3">
+              <div class="bg-gray-800/80 rounded-2xl p-3 flex justify-between items-center border border-gray-700/50">
+                <div>
+                  <div class="font-bold text-white text-sm">Migros</div>
+                  <div class="text-[10px] text-gray-400">Sebze Paketi (SKT Yakın)</div>
+                  <div class="mt-1 flex items-center gap-1.5">
+                    <span class="text-gray-500 line-through text-[10px]">150₺</span>
+                    <span class="text-brand font-bold text-sm">50₺</span>
+                  </div>
+                </div>
+                <button class="bg-brand text-gray-900 px-3 py-1.5 rounded-xl font-bold text-xs">Kap</button>
+              </div>
+              
+              <div class="bg-gray-800/80 rounded-2xl p-3 flex justify-between items-center border border-gray-700/50">
+                <div>
+                  <div class="font-bold text-white text-sm">Starbucks</div>
+                  <div class="text-[10px] text-gray-400">Akşam Fırın Ürünleri</div>
+                  <div class="mt-1 flex items-center gap-1.5">
+                    <span class="text-gray-500 line-through text-[10px]">200₺</span>
+                    <span class="text-brand font-bold text-sm">70₺</span>
+                  </div>
+                </div>
+                <button class="bg-brand text-gray-900 px-3 py-1.5 rounded-xl font-bold text-xs">Kap</button>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom Nav Bar -->
+          <div class="absolute bottom-0 inset-x-0 h-14 bg-[#111827] flex justify-around items-center px-3 border-t border-gray-800 z-20">
+            <div class="flex flex-col items-center text-brand"><i class="fa-solid fa-house text-base"></i><span class="text-[9px] mt-1 font-medium">Ana Sayfa</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-map text-base"></i><span class="text-[9px] mt-1">Harita</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-solid fa-piggy-bank text-base"></i><span class="text-[9px] mt-1">Kumbaram</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-user text-base"></i><span class="text-[9px] mt-1">Profil</span></div>
+          </div>
+        </div>
+
+        <!-- App Screen 3 (Harita) -->
+        <div class="rounded-[2.5rem] overflow-hidden border-[6px] border-gray-800 shadow-2xl hover:border-brand/60 hover:shadow-brand/20 transition-all duration-500 transform hover:-translate-y-4 md:-mt-4 bg-[#0B1120] flex flex-col h-[520px] relative">
+           <!-- Notch -->
+          <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+             <div class="w-24 h-5 bg-gray-800 rounded-b-2xl"></div>
+          </div>
+          <!-- Screen Content (Map bg) -->
+          <div class="flex-grow flex flex-col relative overflow-hidden bg-[#0A101C]">
+            <!-- Grid pattern overlay -->
+            <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#4f46e5 1px, transparent 1px), linear-gradient(90deg, #4f46e5 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <!-- Blue route line -->
+            <div class="absolute top-0 right-10 bottom-0 w-24 bg-blue-900/30 -skew-x-12 blur-md rounded-full"></div>
+            
+            <div class="p-4 pt-10 relative z-10">
+              <h4 class="text-lg font-bold text-white">Canlı Harita</h4>
+            </div>
+            
+            <!-- Map Nodes -->
+            <div class="relative flex-grow z-10">
+              <!-- Store Node -->
+              <div class="absolute top-10 left-12 flex flex-col items-center">
+                <div class="w-8 h-8 border-2 border-brand rounded-xl flex items-center justify-center bg-gray-900 mb-1 z-10"><i class="fa-solid fa-store text-brand text-xs"></i></div>
+                <div class="w-1.5 h-1.5 bg-brand rounded-full mb-1"></div>
+                <div class="bg-gray-900 px-1.5 py-0.5 rounded text-[8px] font-bold">Bizim Fırın</div>
+              </div>
+              
+              <!-- Dashed line -->
+              <svg class="absolute top-20 left-16 w-16 h-24" viewBox="0 0 50 100" fill="none">
+                <path d="M 0 0 Q 30 50 10 100" stroke="#DDA63A" stroke-width="2" stroke-dasharray="4 4" />
+              </svg>
+
+              <!-- Courier Node -->
+              <div class="absolute top-24 left-20 w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.5)] z-20">
+                <i class="fa-solid fa-person-biking text-gray-900 text-[10px]"></i>
+              </div>
+
+              <!-- User Node -->
+              <div class="absolute top-44 left-16 flex flex-col items-center">
+                <div class="w-8 h-8 border-2 border-red-400 rounded-xl flex items-center justify-center bg-gray-900 mb-1 z-10"><i class="fa-regular fa-user text-red-400 text-xs"></i></div>
+                <div class="w-1.5 h-1.5 bg-red-400 rounded-full mb-1"></div>
+                <div class="bg-gray-900 px-1.5 py-0.5 rounded text-[8px] font-bold">Ahmet Y.</div>
+              </div>
+            </div>
+
+            <!-- Bottom Sheet -->
+            <div class="absolute bottom-14 inset-x-3 bg-gray-900/95 border border-gray-700/50 rounded-2xl p-3 z-20 backdrop-blur-sm">
+              <div class="flex justify-between items-center mb-3">
+                <span class="bg-brand/20 text-brand text-[8px] font-bold px-1.5 py-0.5 rounded">AKTİF TESLİMAT</span>
+                <span class="text-white font-bold text-xs">10 dk kaldı</span>
+              </div>
+              <div class="relative pl-3 space-y-2.5">
+                <div class="absolute left-[2px] top-1.5 bottom-1.5 w-0.5 bg-gray-700"></div>
+                <div class="flex justify-between items-center relative">
+                  <div class="w-1.5 h-1.5 bg-brand rounded-full absolute -left-[13px] top-1.5"></div>
+                  <span class="text-white text-[10px] font-bold">Bizim Fırın</span>
+                  <span class="text-gray-500 text-[8px]">Kadıköy</span>
+                </div>
+                <div class="flex justify-between items-center relative">
+                  <div class="w-1.5 h-1.5 bg-red-400 rounded-full absolute -left-[13px] top-1.5 border border-gray-900"></div>
+                  <span class="text-white text-[10px] font-bold">Ahmet Yılmaz</span>
+                  <span class="text-gray-500 text-[8px]">Üsküdar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom Nav Bar -->
+          <div class="absolute bottom-0 inset-x-0 h-14 bg-[#111827] flex justify-around items-center px-3 border-t border-gray-800 z-30">
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-solid fa-house text-base"></i><span class="text-[9px] mt-1">Ana Sayfa</span></div>
+            <div class="flex flex-col items-center text-brand"><i class="fa-regular fa-map text-base"></i><span class="text-[9px] mt-1 font-medium">Harita</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-solid fa-piggy-bank text-base"></i><span class="text-[9px] mt-1">Kumbaram</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-user text-base"></i><span class="text-[9px] mt-1">Profil</span></div>
+          </div>
+        </div>
+
+        <!-- App Screen 4 (Kumbara) -->
+        <div class="rounded-[2.5rem] overflow-hidden border-[6px] border-gray-800 shadow-2xl hover:border-brand/60 hover:shadow-brand/20 transition-all duration-500 transform hover:-translate-y-2 mt-4 md:mt-8 bg-[#0B1120] flex flex-col h-[520px] relative">
+          <!-- Notch -->
+          <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+             <div class="w-24 h-5 bg-gray-800 rounded-b-2xl"></div>
+          </div>
+          <!-- Screen Content -->
+          <div class="flex-grow flex flex-col p-4 pt-10 pb-20 relative overflow-hidden">
+            <h4 class="text-lg font-bold text-white mb-4">Kumbaram</h4>
+            
+            <div class="bg-gray-800/50 border border-brand/50 rounded-3xl p-4 flex flex-col items-center mb-4">
+              <i class="fa-solid fa-piggy-bank text-2xl text-brand mb-2"></i>
+              <div class="text-[10px] text-gray-400 mb-1">Toplam Bağışınız</div>
+              <div class="text-xl font-bold text-white mb-2">1,250 ₺</div>
+              <div class="text-[9px] text-brand text-center mb-3">Bugüne kadar 25 kişiye yemek sağladınız! 🍲</div>
+              <div class="bg-gray-900 border border-brand/30 rounded-full px-3 py-1 text-[10px] text-brand flex items-center gap-1.5">
+                Seviye: Kahraman <i class="fa-solid fa-certificate"></i>
+              </div>
+            </div>
+
+            <h5 class="text-xs font-bold text-white mb-2">Hızlı Bağış</h5>
+            <div class="grid grid-cols-3 gap-1.5 mb-4">
+              <div class="bg-gray-800 rounded-lg py-1.5 text-center text-[10px] font-bold text-white border border-gray-700">50 ₺</div>
+              <div class="bg-gray-800 rounded-lg py-1.5 text-center text-[10px] font-bold text-white border border-gray-700">100 ₺</div>
+              <div class="bg-gray-800 rounded-lg py-1.5 text-center text-[10px] font-bold text-white border border-gray-700">200 ₺</div>
+              <div class="bg-gray-800 rounded-lg py-1.5 text-center text-[10px] font-bold text-white border border-gray-700">500 ₺</div>
+              <div class="bg-gray-800 rounded-lg py-1.5 text-center text-[10px] font-bold text-white border border-gray-700">1000 ₺</div>
+              <div class="bg-gray-800 rounded-lg py-1.5 text-center text-[10px] font-bold text-white border border-gray-700">2000 ₺</div>
+            </div>
+            <button class="w-full bg-brand text-gray-900 py-2 rounded-xl font-bold text-xs">Bağış Yap</button>
+          </div>
+          <!-- Bottom Nav Bar -->
+          <div class="absolute bottom-0 inset-x-0 h-14 bg-[#111827] flex justify-around items-center px-3 border-t border-gray-800 z-20">
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-solid fa-house text-base"></i><span class="text-[9px] mt-1">Ana Sayfa</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-map text-base"></i><span class="text-[9px] mt-1">Harita</span></div>
+            <div class="flex flex-col items-center text-brand"><i class="fa-solid fa-piggy-bank text-base"></i><span class="text-[9px] mt-1 font-medium">Kumbaram</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-user text-base"></i><span class="text-[9px] mt-1">Profil</span></div>
+          </div>
+        </div>
+
+        <!-- App Screen 5 (Gönüllü) -->
+        <div class="rounded-[2.5rem] overflow-hidden border-[6px] border-gray-800 shadow-2xl hover:border-brand/60 hover:shadow-brand/20 transition-all duration-500 transform hover:-translate-y-2 bg-[#0B1120] flex flex-col h-[520px] relative">
+          <!-- Notch -->
+          <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+             <div class="w-24 h-5 bg-gray-800 rounded-b-2xl"></div>
+          </div>
+          <!-- Screen Content -->
+          <div class="flex-grow flex flex-col p-4 pt-10 pb-20 relative overflow-hidden">
+            <div class="flex items-center gap-3 mb-5">
+              <i class="fa-solid fa-arrow-left text-white text-sm"></i>
+              <h4 class="text-lg font-bold text-white">Gönüllü Kurye</h4>
+            </div>
+
+            <div class="space-y-3">
+              <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-3">
+                <div class="flex justify-between items-center mb-3">
+                  <div>
+                    <div class="text-gray-500 text-[9px]">Alış:</div>
+                    <div class="text-white font-bold text-xs">Bizim Fırın</div>
+                  </div>
+                  <i class="fa-solid fa-arrow-right text-brand text-[10px]"></i>
+                  <div class="text-right">
+                    <div class="text-gray-500 text-[9px]">Teslimat:</div>
+                    <div class="text-white font-bold text-xs">Ahmet (İhtiyaç)</div>
+                  </div>
+                </div>
+                <div class="h-px bg-gray-700 w-full mb-2"></div>
+                <div class="flex justify-between items-center">
+                  <div class="text-brand font-bold text-xs">50 Puan</div>
+                  <div class="text-gray-400 text-[10px] flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> 2.5km</div>
+                  <button class="bg-white text-gray-900 px-3 py-1 rounded-lg text-[10px] font-bold">Üstlen</button>
+                </div>
+              </div>
+
+              <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-3">
+                <div class="flex justify-between items-center mb-3">
+                  <div>
+                    <div class="text-gray-500 text-[9px]">Alış:</div>
+                    <div class="text-white font-bold text-xs">Yeşil Manav</div>
+                  </div>
+                  <i class="fa-solid fa-arrow-right text-brand text-[10px]"></i>
+                  <div class="text-right">
+                    <div class="text-gray-500 text-[9px]">Teslimat:</div>
+                    <div class="text-white font-bold text-xs">Aşevi</div>
+                  </div>
+                </div>
+                <div class="h-px bg-gray-700 w-full mb-2"></div>
+                <div class="flex justify-between items-center">
+                  <div class="text-brand font-bold text-xs">100 Puan</div>
+                  <div class="text-gray-400 text-[10px] flex items-center gap-1"><i class="fa-solid fa-location-dot"></i> 4km</div>
+                  <button class="bg-white text-gray-900 px-3 py-1 rounded-lg text-[10px] font-bold">Üstlen</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom Nav Bar -->
+          <div class="absolute bottom-0 inset-x-0 h-14 bg-[#111827] flex justify-around items-center px-3 border-t border-gray-800 z-20">
+            <div class="flex flex-col items-center text-brand"><i class="fa-solid fa-house text-base"></i><span class="text-[9px] mt-1 font-medium">Ana Sayfa</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-map text-base"></i><span class="text-[9px] mt-1">Harita</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-solid fa-piggy-bank text-base"></i><span class="text-[9px] mt-1">Kumbaram</span></div>
+            <div class="flex flex-col items-center text-gray-500"><i class="fa-regular fa-user text-base"></i><span class="text-[9px] mt-1">Profil</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- App Description and QR Code -->
+      <div class="mt-20 bg-gray-950/50 border border-gray-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto shadow-2xl relative z-10">
+        <div class="flex-1 text-center md:text-left">
+          <h4 class="text-2xl font-bold text-white mb-4">Gıda Köprüsü Her An Yanınızda</h4>
+          <p class="text-gray-400 text-lg leading-relaxed">
+            Mobil uygulamamız sayesinde israfı önlemek hiç olmadığı kadar kolay. İşletmeler gün sonu gıda fazlalarını sisteme girer, gönüllü kuryelerimiz bildirim alarak ürünleri teslim alır ve canlı harita üzerinden ihtiyaç sahiplerine anında ulaştırır. Kullanıcılarımız ise hem indirimli "Sıfır Atık" fırsatlarından yararlanabilir hem de kumbaraları aracılığıyla doğrudan bağış yaparak bu iyilik ağına ortak olabilir.
+          </p>
+        </div>
+        <div class="shrink-0 flex flex-col items-center bg-white p-5 rounded-2xl shadow-xl shadow-brand/10 transform hover:scale-105 transition duration-300">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://yet-gen.vercel.app/&margin=0&color=111827" alt="QR Kod" class="w-40 h-40 object-contain mb-4 rounded-lg">
+          <p class="text-gray-900 font-extrabold text-sm text-center max-w-[150px] leading-tight">
+            Uygulamayı indirmek için QR okut
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-gray-800 py-24">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Birlikte Büyüyoruz</h3>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">Gıda Köprüsü'nü kullanan işletmeler ve bireylerle yarattığımız ortak etki.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-brand/30 transition duration-300 flex flex-col">
+          <div class="flex text-brand mb-6 text-sm gap-1">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-300 italic mb-8 leading-relaxed flex-grow">
+            "Gün sonunda tezgahta kalan sağlam ürünleri çöpe atmak en büyük üzüntümdü. Gıda Köprüsü sayesinde hem sıfır atık hedefine ulaşıyoruz hem de yasal vergi indiriminden yararlanıyoruz."
+          </p>
+          <div class="flex items-center gap-4 mt-auto">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Ahmet Yılmaz" class="w-12 h-12 rounded-full object-cover border-2 border-gray-600">
+            <div>
+              <h5 class="text-white font-bold">Ahmet Yılmaz</h5>
+              <p class="text-brand text-xs font-medium uppercase tracking-wider">Yerel Market İşletmecisi</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-brand/30 transition duration-300 flex flex-col">
+          <div class="flex text-brand mb-6 text-sm gap-1">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-300 italic mb-8 leading-relaxed flex-grow">
+            "Artık mutfak alışverişimi tamamen bu uygulama üzerinden yapıyorum. Dinamik fiyatlandırma ile taze ürünlere çok uygun fiyata ulaşıyor, bütçemi korurken israfı da önlüyorum."
+          </p>
+          <div class="flex items-center gap-4 mt-auto">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop" alt="Zeynep Kaya" class="w-12 h-12 rounded-full object-cover border-2 border-gray-600">
+            <div>
+              <h5 class="text-white font-bold">Zeynep Kaya</h5>
+              <p class="text-brand text-xs font-medium uppercase tracking-wider">Bilinçli Tüketici</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-brand/30 transition duration-300 flex flex-col">
+          <div class="flex text-brand mb-6 text-sm gap-1">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-300 italic mb-8 leading-relaxed flex-grow">
+            "Gönüllü kurye olarak sisteme dahil oldum. Mahallemizdeki fırından kalan taze ürünleri toplayıp ihtiyaç sahiplerine ulaştırıyorum, günümün en anlamlı aktivitesi oldu. Rota sistemi çok başarılı."
+          </p>
+          <div class="flex items-center gap-4 mt-auto">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop" alt="Caner Demir" class="w-12 h-12 rounded-full object-cover border-2 border-gray-600">
+            <div>
+              <h5 class="text-white font-bold">Caner Demir</h5>
+              <p class="text-brand text-xs font-medium uppercase tracking-wider">Gönüllü Kurye</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Revenue Model (B2B) Section -->
+  <section class="container mx-auto px-6 py-24">
+    <div class="bg-brand rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden shadow-2xl shadow-brand/20">
+      <!-- Background Icon -->
+      <div class="absolute -right-10 -bottom-10 opacity-10">
+        <i class="fa-solid fa-handshake text-[300px] text-gray-900"></i>
+      </div>
+      
+      <div class="relative z-10 w-full md:w-2/3">
+        <h3 class="text-3xl md:text-4xl font-black text-gray-900 mb-6 tracking-tight">İşletmeler & Kurumlar İçin Değer</h3>
+        <p class="text-gray-800 text-lg mb-8 leading-relaxed font-medium">
+          Sisteme entegre olan restoran, pazar, market ve üreticiler atık maliyetlerini ciddi oranda düşürür. Platform üzerinden kurtarılan ürünlerden alınan düşük komisyon ile sürdürülebilirlik fonu yaratılırken, bağışlanan gıdalar için işletmelere yasal <span class="font-extrabold bg-gray-900 text-brand px-2 py-0.5 rounded ml-1">vergi indirimi</span> ve çevre sertifikasyon imkanı sağlanır.
+        </p>
+        <div class="flex flex-wrap items-center gap-6">
+          <div class="flex items-center text-gray-900 font-bold gap-2 text-lg">
+            <i class="fa-solid fa-circle-check text-xl"></i> Ek Gelir Kapısı
+          </div>
+          <div class="flex items-center text-gray-900 font-bold gap-2 text-lg">
+            <i class="fa-solid fa-circle-check text-xl"></i> Yasal Vergi İndirimi
+          </div>
+          <div class="flex items-center text-gray-900 font-bold gap-2 text-lg">
+            <i class="fa-solid fa-circle-check text-xl"></i> Sıfır Atık Hedefi
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative z-10 w-full md:w-auto">
+        <a href="kurumsal-ortak.html" class="inline-flex justify-center items-center bg-gray-900 text-white px-8 py-5 rounded-full font-bold text-lg hover:bg-gray-800 transition shadow-xl w-full md:w-auto whitespace-nowrap gap-3">
+          <i class="fa-solid fa-briefcase"></i> Kurumsal Ortak Ol
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="py-12 border-t border-gray-800 bg-gray-900/40 overflow-hidden">
+    <div class="container mx-auto px-6 mb-10 text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Ortaklarımız</h3>
+      <div class="w-16 h-1 bg-brand mx-auto rounded-full mb-4"></div>
+      <p class="text-gray-400">Sıfır atık vizyonumuzu paylaşan değerli iş ortaklarımız.</p>
+    </div>
+    
+    <div class="relative flex overflow-x-hidden group">
+      <!-- The scrolling container -->
+      <div class="animate-marquee flex items-center whitespace-nowrap w-max hover:[animation-play-state:paused]">
+        <!-- Set 1 -->
+        <div class="flex items-center justify-around space-x-16 md:space-x-24 px-8 md:px-12 text-gray-500">
+          <div class="font-black tracking-tighter text-3xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default flex items-center gap-2"><i class="fa-solid fa-leaf"></i> YeşilMarket</div>
+          <div class="font-bold tracking-tight text-4xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default">TazeGıda A.Ş.</div>
+          <div class="font-black italic text-3xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default flex items-center gap-2"><i class="fa-solid fa-seedling"></i> EcoFırın</div>
+          <div class="font-extrabold uppercase tracking-widest text-2xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default">Natura Pazarı</div>
+          <div class="font-bold text-3xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default flex items-center gap-2"><i class="fa-solid fa-wheat-awn"></i> Hasat Koop.</div>
+          <div class="font-black tracking-tighter text-4xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default">BiyoTedarik</div>
+        </div>
+        
+        <!-- Set 2 (Duplicate for seamless loop) -->
+        <div class="flex items-center justify-around space-x-16 md:space-x-24 px-8 md:px-12 text-gray-500">
+          <div class="font-black tracking-tighter text-3xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default flex items-center gap-2"><i class="fa-solid fa-leaf"></i> YeşilMarket</div>
+          <div class="font-bold tracking-tight text-4xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default">TazeGıda A.Ş.</div>
+          <div class="font-black italic text-3xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default flex items-center gap-2"><i class="fa-solid fa-seedling"></i> EcoFırın</div>
+          <div class="font-extrabold uppercase tracking-widest text-2xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default">Natura Pazarı</div>
+          <div class="font-bold text-3xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default flex items-center gap-2"><i class="fa-solid fa-wheat-awn"></i> Hasat Koop.</div>
+          <div class="font-black tracking-tighter text-4xl opacity-60 hover:opacity-100 hover:text-brand transition cursor-default">BiyoTedarik</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="iletisim" class="bg-gray-950 pt-16 pb-8 border-t border-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+        <div class="text-left">
+          <div class="text-3xl font-bold text-white tracking-wide mb-3">
+            Gıda<span class="text-brand">Köprüsü</span>
+          </div>
+          <p class="text-gray-400 text-sm max-w-sm">
+            Gıdanın çöpe değil, sofraya ulaştığı sürdürülebilir bir gelecek için teknoloji üretiyoruz.
+          </p>
+        </div>
+        
+        <div class="flex flex-col md:items-end text-left md:text-right">
+          <p class="text-gray-400 text-sm max-w-md mb-4 flex items-start md:items-center gap-3">
+            <i class="fa-solid fa-earth-americas text-brand text-xl"></i>
+            <span>
+              Birleşmiş Milletler Sürdürülebilir Kalkınma Amaçları <br/>
+              <span class="text-brand font-bold">(SKA 2: Açlığa Son)</span> hedeflerini destekler.
+            </span>
+          </p>
+          <div class="flex gap-5">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-brand hover:bg-gray-800 transition">
+              <i class="fa-brands fa-instagram text-lg"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-brand hover:bg-gray-800 transition">
+              <i class="fa-brands fa-twitter text-lg"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-brand hover:bg-gray-800 transition">
+              <i class="fa-brands fa-linkedin text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600 text-sm font-medium">© 2026 Gıda Köprüsü. Tüm hakları saklıdır.</p>
+        <div class="flex gap-6 text-sm text-gray-600 font-medium">
+          <a href="#" class="hover:text-gray-400 transition">Gizlilik Politikası</a>
+          <a href="#" class="hover:text-gray-400 transition">Kullanım Koşulları</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

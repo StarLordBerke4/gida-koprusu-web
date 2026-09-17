@@ -1,0 +1,6 @@
+{
+  "name": "Gıda Köprüsü",
+  "description": "Açlığa ve gıda israfına son vermeyi hedefleyen, SKA 2 destekli sürdürülebilir sosyal girişim platformu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
